@@ -1,0 +1,484 @@
+:root{
+    --primer--: #A6CF98;  
+    --bg--: #ffffff;
+    
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    border: none;
+    text-decoration: none; /*Berfungsi untuk menghilangkan garis bawah pada link*/
+}
+
+body{
+    font-family: 'poppins', sans-serif;
+    background-color: var(--bg--);
+    color: #000000;
+    /* min-height: 2000px; */
+}
+
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 9px 7%;
+    background-color: rgba(85, 124, 85, 1);
+    border-bottom: 1px solid #640707;
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 9999;
+}
+
+.navbar .navbar-logo {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #ffffff;
+    font-style: italic;
+}
+
+.navbar .navbar-logo span {
+    color: var(--primer--);
+}
+
+.navbar .navbar-nav a {
+    color: #ffffff;
+    display: inline-block;
+    font-size: 1rem;
+    margin: 0 1rem;
+}
+
+.navbar .navbar-nav a:hover {
+    color: var(--primer--);
+}
+
+.navbar .navbar-nav a::after {
+    content: '';
+    display: block;
+    padding-bottom: 0.5rem;
+    border-bottom: 0.1rem solid var(--primer--);
+    transform: scaleX(0);
+    transition: 0.2s linear;
+}
+
+.navbar .navbar-nav a:hover::after{
+   transform: scaleX(0.5); 
+}
+
+.navbar .navbar-extra a{
+    color: #ffffff;
+    margin: 0 0.5rem;
+}
+
+.navbar .navbar-extra a:hover{
+    color: var(--primer--);
+}
+
+/* Menghilangkan menu */
+#menu {
+    display: none;
+}
+
+/* Hero Section */
+.hero {
+    min-height: 90vh;
+    display: flex;
+    align-items: center;
+    background-image: url('images/1.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+.hero::after {
+    content: '';
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 30%;
+    bottom: 0;
+    background: linear-gradient(0deg, #ffffff 8%, rgba(255, 255, 255, 0) 50%);
+}
+
+
+.hero .content {
+    padding: 1.4rem 7%;
+    max-width: 60rem;
+}
+
+.hero .content {
+    font-size: 2em;
+    color: #ffffff;
+    text-shadow: 1px 1px 3px rgba(1, 1, 1, 0.5);
+    line-height: 1.2;
+}
+
+ .hero span {
+    color: var(--primer--);
+} 
+
+.hero .content .cta{
+    margin: 1rem;
+    display: inline-block;
+    padding: 1rem 3rem;
+    font-size: 1.4rem;
+    color: #ffffff;
+    background-color: var(--primer--);
+    border-radius: 0.5rem;
+    box-shadow: 1px 1px 1px rgba(1, 1, 3, 0.5);
+}
+/* Hero Section akhir*/
+
+/* about section awal */
+
+.about .content {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.about .content ul {
+    list-style-type: square;
+    margin-left: 1.5em;
+    padding-left: 0;
+}
+
+.about .content li {
+    margin-bottom: 0.5em;
+}
+
+.about {
+    padding: 10rem 7% 1.4rem;
+    text-align: justify;
+}
+
+.about h2, 
+.produk h2,
+.contact h2 {
+    text-align: center;
+    font-size: 2.6rem;
+    margin-bottom: 3rem;
+}
+
+.about h2 span,
+.produk h2 span,
+.contact h2 span {
+    color: var(--primer--);
+}
+
+.about .row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.about .row .about-img {
+    flex: 1 1 45%; /* Menyesuaikan lebar container gambar */
+    margin-right: 4%; /* Sesuaikan margin ke kanan */
+}
+
+.about .row .about-img img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+}
+
+.about .row .content {
+    flex: 1 1 50%; /* Menyesuaikan lebar container teks */
+}
+
+.about .row .content h3 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+}
+
+.about .row .content p {
+    margin-bottom: 1rem;
+    font-size: 1rem;
+    font-weight: 400;
+    text-align: justify;
+}
+
+/* about section akhir */
+
+
+/* Menu awal */
+.produk {
+    text-align: center;
+    max-width: 30rem;
+    margin: auto;
+    font-size: 1rem;
+    font-weight: 100;
+    line-height: 1.6rem;
+}
+/* Menu akhir */
+
+/* Device yang digunakan */
+
+/* Laptop */
+@media (max-width: 1366px){
+    html{
+        font-size: 75%;
+    }
+}
+
+@media (min-width: 1024px) {
+    .about .row .about-img img {
+      max-width: 50%;
+    }
+  }
+
+/* Tablet */
+@media (max-width: 768px){
+    html{
+        font-size: 62.5%;
+    }
+
+    #menu{
+        display: inline-block;
+    }
+
+    .navbar .navbar-nav{
+        position: absolute;
+        top: 100%;
+        right: -100%;
+        background-color: #9f9f9f;
+        width: 30rem;
+        height: 100vh;
+        transition: 0.3s;
+    }
+
+    .navbar .navbar-nav.active {
+        right:0%;
+    }
+
+    .navbar .navbar-nav a {
+        color: var(--bg--);
+        display: block;
+        margin: 1.5rem;
+        padding: 0.5rem;
+        font-size: 2rem;
+    }
+
+    .navbar .navbar-nav a::after{
+        transform-origin: 0 0;
+    }
+
+    .navbar .navbar-nav a:hover::after{
+        transform:scaleX(0.2);
+    }
+
+    .about .row {
+        flex-wrap: wrap;
+    }
+
+    .about .row .about-img img {
+        height: 25rem;
+        object-fit: cover;
+        object-position: center;
+    }
+
+    .about .row .content {
+        padding: 0;
+    }
+
+    .about .row .content h3 {
+        margin-top: 1rem;
+        font-size: 2rem;
+    }
+
+    .about .row .content p {
+        font-size: 1.5rem;
+    }
+
+}
+
+/* Mobile Phone */
+@media (max-width: 450px){
+    html{
+        font-size: 55%;
+    }
+}
+
+/* Menu */
+#menu .nav-pills .nav-link {
+    background-color: #fff;
+    margin-left: 8px;
+    margin-right: 8px;
+    color: #222;
+    border-radius: 100px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+}
+
+#menu .nav-pills .nav-link.active {
+    background-color: #F58d17;
+    color: #ffffff;
+}
+
+.menu-items .stars {
+    color: #F58d17;
+}
+
+/* Add these styles to your existing CSS */
+.btn-pesan-sekarang {
+    background-color: var(--primer--); /* Green background */
+    color: #fff; /* White text color */
+    padding: 10px 20px; /* Adjust padding as needed */
+    text-decoration: none; /* Remove underline */
+    border-radius: 5px; /* Add some border-radius for rounded corners */
+    transition: background-color 0.3s; /* Smooth transition on hover */
+  }
+  
+  .btn-pesan-sekarang:hover {
+    background-color: #6c757d; /* Gray background on hover */
+  }
+  
+
+
+  /* Kontak Styles */
+  .contact {
+    padding: 50px 0;
+    background-color: #f9f9f9;
+  }
+
+  .contact .section-header {
+    text-align: center;
+    margin-bottom: 40px;
+  }
+
+  .contact .section-header h2 {
+    font-size: 40px;
+    margin: 0;
+    padding: 0;
+  }
+
+  .contact .section-header p {
+    font-size: 16px;
+    color: #6c757d;
+  }
+
+  .contact .info-item {
+    background: #ffffff;
+    padding: 30px;
+    margin-bottom: 20px;
+  }
+
+  .contact .info-item .icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 56px;
+    height: 56px;
+    font-size: 24px;
+    line-height: 0;
+    color: #ffffff;
+    background: var(--color-primary);
+    border-radius: 50%;
+    margin-right: 15px;
+  }
+
+  .contact .info-item h3 {
+    font-size: 20px;
+    color: #6c757d;
+    font-weight: 700;
+    margin: 0 0 5px 0;
+  }
+
+  .contact .info-item p {
+    margin: 0;
+    color: #000;
+    line-height: 24px;
+    font-size: 14px;
+  }
+
+  .contact .info-item div {
+    padding: 0;
+    margin: 0;
+    color: #000;
+    line-height: 24px;
+    font-size: 14px;
+  }
+  /* Kontak Styles End */
+  
+  
+  
+ /* ============ Footer ============= */
+ footer {
+    font-size: 14px;
+    background-color: #1f1f24;
+    padding: 20px 0;
+    color: rgba(255, 255, 255, 0.7);
+  }
+
+  footer .icon {
+    margin-right: 10px;
+    font-size: 18px;
+    line-height: 0;
+  }
+
+  footer h4 {
+    font-size: 14px;
+    font-weight: bold;
+    color: #fff;
+    display: flex;
+    align-items: center; /* Align text and icon vertically */
+  }
+
+  footer p {
+    margin-bottom: 0;
+  }
+
+  footer .footer-links {
+    margin-bottom: 20px;
+  }
+
+  footer .contact-info {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  footer .contact-info .item {
+    flex-basis: calc(33.3333% - 10px);
+  }
+
+  footer .social-links a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.7);
+    margin-right: 10px;
+    transition: 0.3s;
+  }
+
+  footer .social-links a:hover {
+    color: #fff;
+    border-color: #fff;
+  }
+
+  footer .copyright {
+    text-align: center;
+    padding-top: 15px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  footer .credits {
+    padding-top: 4px;
+    text-align: center;
+    font-size: 12px;
+  }
+
+  footer .credits a {
+    color: #fff;
+  }
+  /* ============ Footer ============= */
